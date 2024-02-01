@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: harbor.prod.viettq.com/demo/my-app
+  repository: rockman88v/feb-demo-app
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
@@ -37,8 +37,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
+  nodePort: 32123
 
 ingress:
   enabled: true
